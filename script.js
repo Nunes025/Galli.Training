@@ -1,14 +1,15 @@
-// script.js
+document.getElementById('surveyForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
 
-const form = document.getElementById('surveyForm');
+    // Coleta os dados do formulário
+    const satisfaction = document.getElementById('satisfaction').value;
+    const comments = document.getElementById('comments').value;
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o comportamento padrão do formulário (Formspree já recebe normalmente)
+    // Aqui você pode enviar os dados para um backend (ex: API) para armazenar
+    // Para este exemplo, vamos apenas exibir uma mensagem de sucesso
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerHTML = `<p>Obrigado por sua participação!</p>`;
 
-    // Aguarda um pouquinho para garantir que o Formspree capture os dados
-    setTimeout(function () {
-        const messageDiv = document.getElementById('message');
-        messageDiv.innerHTML = '<p>Obrigado por sua participação!</p>';
-        form.reset(); // Limpa o formulário
-    }, 100); 
+    // Limpa o formulário
+    document.getElementById('surveyForm').reset();
 });
