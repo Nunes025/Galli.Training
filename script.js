@@ -1,8 +1,8 @@
 const form = document.getElementById('surveyForm');
-const container = document.getElementById('mainContainer'); // agora pego o container correto
+const container = document.getElementById('mainContainer');
 
 form.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Impede o envio normal
+    event.preventDefault(); // Impede o envio tradicional
 
     const formData = new FormData(form);
 
@@ -16,7 +16,6 @@ form.addEventListener('submit', async function (event) {
         });
 
         if (response.ok) {
-            // Depois do envio, muda completamente o conteúdo da tela
             container.innerHTML = `
                 <div style="text-align: center;">
                     <img src="file.png" alt="Logotipo Academia Força e Saúde" style="max-width: 300px; height: auto; margin-bottom: 20px;">
@@ -24,10 +23,11 @@ form.addEventListener('submit', async function (event) {
                 </div>
             `;
         } else {
-            alert('Ocorreu um erro. Tente novamente.');
+            alert('Ocorreu um erro ao enviar. Tente novamente.');
         }
     } catch (error) {
         alert('Erro de conexão. Tente mais tarde.');
-        console.error('Erro:', error);
+        console.error(error);
     }
 });
+
