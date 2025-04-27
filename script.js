@@ -1,15 +1,31 @@
-document.getElementById('surveyForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio do formulário
+const form = document.getElementById('surveyForm');
+const container = document.querySelector('.container'); // pega a div principal
 
-    // Coleta os dados do formulário
-    const satisfaction = document.getElementById('satisfaction').value;
-    const comments = document.getElementById('comments').value;
+form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Impede o envio normal
 
-    // Aqui você pode enviar os dados para um backend (ex: API) para armazenar
-    // Para este exemplo, vamos apenas exibir uma mensagem de sucesso
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerHTML = `<p>Obrigado por sua participação!</p>`;
+    const formData = new FormData(form);
 
-    // Limpa o formulário
-    document.getElementById('surveyForm').reset();
+    try {
+        const response = await fetch('SEU_ENDPOINT_AQUI', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Depois do envio, muda completamente o conteúdo da tela
+            container.innerHTML = `
+                <img src="file.png" alt="Logotipo Academia Força e Saúde" style="max-width: 300px; height: auto; display: block; margin: 0 auto 20px;">
+                <h2 style="text-align: center;">Nós da Academia Força & Saúde Agradecemos sua colaboração!</h2>
+            `;
+        } else {
+            alert('Ocorreu um erro. Tente novamente.');
+        }
+    } catch (error) {
+        alert('Erro de conexão. Tente mais tarde.');
+        console.error('Erro:', error);
+    }
 });
