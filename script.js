@@ -1,5 +1,5 @@
 const form = document.getElementById('surveyForm');
-const container = document.querySelector('.container'); // pega a div principal
+const container = document.getElementById('mainContainer'); // agora pego o container correto
 
 form.addEventListener('submit', async function (event) {
     event.preventDefault(); // Impede o envio normal
@@ -18,8 +18,10 @@ form.addEventListener('submit', async function (event) {
         if (response.ok) {
             // Depois do envio, muda completamente o conteúdo da tela
             container.innerHTML = `
-                <img src="file.png" alt="Logotipo Academia Força e Saúde" style="max-width: 300px; height: auto; display: block; margin: 0 auto 20px;">
-                <h2 style="text-align: center;">Nós da Academia Força & Saúde Agradecemos sua colaboração!</h2>
+                <div style="text-align: center;">
+                    <img src="file.png" alt="Logotipo Academia Força e Saúde" style="max-width: 300px; height: auto; margin-bottom: 20px;">
+                    <h2>Nós da Academia Força & Saúde Agradecemos sua colaboração!</h2>
+                </div>
             `;
         } else {
             alert('Ocorreu um erro. Tente novamente.');
