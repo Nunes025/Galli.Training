@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="mainContainer">
         <!-- Logotipo -->
         <img src="file.png" alt="Logotipo Academia Força e Saúde" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 
         <h1>Pesquisa de Satisfação</h1>
 
-        <form id="surveyForm" action="https://formspree.io/f/xzzrzwpj" method="POST">
+        <form id="surveyForm">
             <label for="satisfaction">Como você avalia sua satisfação com a academia?</label>
             <select id="satisfaction" name="satisfaction" required>
                 <option value="">Selecione</option>
@@ -34,15 +34,6 @@
         <div id="message"></div>
     </div>
 
-    <script>
-      // Pequeno script para mostrar mensagem de sucesso sem precisar backend
-      const form = document.getElementById('surveyForm');
-      form.addEventListener('submit', function(e) {
-          setTimeout(function() {
-              document.getElementById('message').innerHTML = '<p>Obrigado por sua participação!</p>';
-              form.reset();
-          }, 100); // Dá um tempinho para o Formspree processar
-      });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
