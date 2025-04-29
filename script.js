@@ -1,8 +1,9 @@
+
 const form = document.getElementById('surveyForm');
 const container = document.getElementById('mainContainer');
 
 form.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Impede o envio tradicional
+    event.preventDefault();
 
     const formData = new FormData(form);
 
@@ -30,4 +31,3 @@ form.addEventListener('submit', async function (event) {
         console.error(error);
     }
 });
-
