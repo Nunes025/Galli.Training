@@ -165,3 +165,40 @@ button:hover {
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .impacto {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 15px;
+    }
+
+    .image-choice {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image-caption {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    input, select, textarea {
+        font-size: 15px;
+    }
+}
