@@ -1,13 +1,20 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('images/fundo/WhatsApp\ Image\ 2025-05-02\ at\ 11.03.27.jpeg') center center / cover no-repeat fixed;
-    position: relative;
-    color: white;
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
 }
 
-/* Overlay escuro sobre a imagem */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background: url('images/background.jpg') center center / cover no-repeat fixed;
+    position: relative;
+}
+
+/* ===== Overlay Escuro ===== */
 body::before {
     content: '';
     position: fixed;
@@ -16,7 +23,7 @@ body::before {
     z-index: 0;
 }
 
-/* Animação */
+/* ===== Animação ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -28,10 +35,11 @@ body::before {
     }
 }
 
-/* Formulário */
+/* ===== Container principal ===== */
 .container {
     position: relative;
     z-index: 1;
+    width: 100%;
     max-width: 600px;
     margin: 50px auto;
     background: rgba(30, 30, 30, 0.95);
@@ -40,7 +48,14 @@ body::before {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(6px);
     animation: fadeInUp 0.7s ease-out;
-    color: white;
+}
+
+/* ===== Cabeçalho e Frase ===== */
+.logo-img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 220px;
+    height: auto;
 }
 
 h1 {
@@ -58,6 +73,7 @@ h1 {
     font-style: italic;
 }
 
+/* ===== Texto e inputs ===== */
 .section-title {
     text-align: center;
     font-weight: 600;
@@ -89,6 +105,7 @@ input:focus, select:focus, textarea:focus {
     outline: none;
 }
 
+/* ===== Botão ===== */
 button {
     width: 100%;
     padding: 12px;
@@ -106,6 +123,7 @@ button:hover {
     background-color: #0088cc;
 }
 
+/* ===== Mensagem de sucesso ===== */
 #message {
     margin-top: 20px;
     text-align: center;
@@ -113,6 +131,7 @@ button:hover {
     color: #00ccff;
 }
 
+/* ===== Imagens e votação ===== */
 .image-options {
     display: flex;
     justify-content: center;
@@ -152,60 +171,50 @@ button:hover {
     color: #ccc;
 }
 
-.logo-img {
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 220px;
-    height: auto;
+/* ===== Responsividade para celular ===== */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .impacto,
+    .section-title,
+    label,
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 15px;
+    }
+
+    .image-choice {
+        width: 110px;
+        height: 110px;
+    }
+
+    .image-caption {
+        font-size: 13px;
+    }
+
+    .image-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-img {
+        max-width: 180px;
+    }
 }
+
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-        margin: 20px auto;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    .impacto {
-        font-size: 14px;
-    }
-
-    .section-title {
-        font-size: 15px;
-    }
-
-    .image-choice {
-        width: 100px;
-        height: 100px;
-    }
-
-    .image-caption {
-        font-size: 12px;
-    }
-
-    button {
-        font-size: 15px;
-        padding: 10px;
-    }
-
-    input, select, textarea {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 600px) {
-    .image-options {
-        flex-direction: column;
-        align-items: center;
-    }
 }
