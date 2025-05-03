@@ -12,6 +12,7 @@ html, body {
     color: white;
     background: url('images/fundo/WhatsApp Image 2025-05-02 at 11.03.27.jpeg') center center / cover no-repeat fixed;
     position: relative;
+    min-height: 100vh;
 }
 
 /* ===== Overlay Escuro ===== */
@@ -39,7 +40,7 @@ body::before {
 .container {
     position: relative;
     z-index: 1;
-    width: 100%;
+    width: 90%;
     max-width: 600px;
     margin: 50px auto;
     background: rgba(30, 30, 30, 0.95);
@@ -216,4 +217,3 @@ button:hover {
     justify-content: center;
     margin-bottom: 10px;
 }
-
