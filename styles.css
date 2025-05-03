@@ -167,19 +167,37 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-    .logo-img {
-        max-width: 140px;
-    }
-
     .container {
-        width: 90%;
+        width: 85%;
+        padding: 12px;
         margin: 20px auto;
-        padding: 15px;
+        background: rgba(30, 30, 30, 0.85); /* mais transparente */
     }
 
-    h1 {
-        font-size: 18px;
+    textarea {
+        height: 100px;
+        max-height: 100px;
+        resize: none;
     }
+
+    .image-choice {
+        width: 110px;
+        height: 110px;
+    }
+
+    .logo {
+        max-width: 160px;
+    }
+
+    h1,
+    .impacto,
+    label,
+    select,
+    input,
+    button {
+        font-size: 15px;
+    }
+}
 
     .impacto,
     .subtitulo,
