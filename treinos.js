@@ -7,7 +7,8 @@ function buscarTreino() {
     return;
   }
 
-const caminho = `./treinos/${codigo}.html`;
+const caminho = `./Treinos/${codigo}.html`;  // com T maiúsculo
+
 
   fetch(caminho)
     .then(response => {
