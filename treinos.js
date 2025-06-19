@@ -7,10 +7,9 @@ function buscarTreino() {
     return;
   }
 
-  // Caminho até o arquivo HTML do treino
-  const caminho = `./treinos/${codigo}.html`;
+  // Corrige caminho com base no GitHub Pages
+  const caminho = `treinos/${codigo}.html`; // SEM "./" para evitar confusão
 
-  // Requisição para carregar o HTML do treino
   fetch(caminho)
     .then(response => {
       if (!response.ok) {
