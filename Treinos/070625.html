@@ -49,21 +49,25 @@
       padding-right: 12px;
     }
 
-    .imagem {
+    .imagem, .imagem-dupla {
       flex: 0 0 120px;
-      height: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      height: auto;
       background-color: #222;
       border-radius: 8px;
-      display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      padding: 6px;
     }
 
-    .imagem img {
-      max-width: 100%;
-      max-height: 100%;
+    .imagem img,
+    .imagem-dupla img {
+      width: 100%;
       object-fit: cover;
+      border-radius: 6px;
     }
 
     @media (max-width: 600px) {
@@ -72,10 +76,15 @@
         align-items: flex-start;
       }
 
-      .imagem {
+      .imagem, .imagem-dupla {
         width: 100%;
-        height: 180px;
-        margin-top: 10px;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .imagem img,
+      .imagem-dupla img {
+        width: 48%;
       }
     }
   </style>
