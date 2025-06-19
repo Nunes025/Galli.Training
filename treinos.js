@@ -7,8 +7,7 @@ function buscarTreino() {
     return;
   }
 
-  // Corrige caminho com base no GitHub Pages
-  const caminho = `treinos/${codigo}.html`; // SEM "./" para evitar confusão
+const caminho = `./treinos/${codigo}.html`;
 
   fetch(caminho)
     .then(response => {
