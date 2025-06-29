@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Treino - Galli Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="treinos.css">
+</head>
+<body>
+  <div class="background">
+    <div class="radial-bg"></div>
+  </div>
+
+  <div class="container">
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="index.html" class="back-link">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m12 19-7-7 7-7"></path>
+          <path d="M19 12H5"></path>
+        </svg>
+        Voltar ao início
+      </a>
+    </div>
+
+    <div class="treino-card fade-in">
+      <div class="card-header">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14,2 14,8 20,8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10,9 9,9 8,9"></polyline>
+          </svg>
+        </div>
+
+        <h1 class="title">Encontre seu treino</h1>
+        <p class="subtitle">Digite o código fornecido para acessar seu treino personalizado</p>
+      </div>
+
+      <div class="card-content">
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="codigoInput" 
+            placeholder="Digite seu código"
+            class="input-field"
+          />
+        </div>
+
+        <button onclick="buscarTreino()" class="btn btn-primary" id="buscarBtn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <span class="btn-text">Buscar Treino</span>
+          <div class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+          </div>
+        </button>
+
+        <div id="resultadoTreino" class="result-container"></div>
+
+        <div class="thank-you">
+          <div class="heart-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <span>Obrigado por fazer parte do nosso time</span>
+        </div>
+        <p class="help-text">Em caso de dúvidas, entre em contato via WhatsApp</p>
+      </div>
+    </div>
+
+    <!-- Tips Card -->
+    <div class="tips-card fade-in-up">
+      <div class="tip-content">
+        <svg class="icon tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7,10 12,15 17,10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <div>
+          <h3>Dica</h3>
+          <p>Salve o PDF no seu dispositivo para acessar offline durante os treinos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="treinos.js"></script>
+</body>
+</html>
