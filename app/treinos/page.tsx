@@ -27,24 +27,25 @@ export default function TreinosPage() {
     setSuccess(false)
 
     try {
-      const caminhoHTML = `/treinos/${codigo.trim()}.html`
+      const caminhoPDF = `/treinos/${codigo.trim()}.pdf`
 
-      // Busca o arquivo HTML do treino
-      const response = await fetch(caminhoHTML)
+      // Criar link temporário para abrir o PDF
+      const linkTemporario = document.createElement("a")
+      linkTemporario.href = caminhoPDF
+      linkTemporario.target = "_blank"
+      linkTemporario.rel = "noopener noreferrer"
+
+      // Verificar se o PDF existe
+      const response = await fetch(caminhoPDF, { method: "HEAD" })
 
       if (response.ok) {
-        const html = await response.text()
+        // Simular clique no link para abrir o PDF
+        document.body.appendChild(linkTemporario)
+        linkTemporario.click()
+        document.body.removeChild(linkTemporario)
 
-        // Abre o treino em uma nova janela apenas para visualização
-        const novaJanela = window.open("", "_blank", "noopener,noreferrer")
-        if (novaJanela) {
-          novaJanela.document.write(html)
-          novaJanela.document.close()
-          setSuccess(true)
-          setCodigo("")
-        } else {
-          setError("Por favor, permita pop-ups para visualizar o treino.")
-        }
+        setSuccess(true)
+        setCodigo("")
       } else {
         setError("Treino não encontrado. Verifique o código e tente novamente.")
       }
