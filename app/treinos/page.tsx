@@ -35,13 +35,15 @@ export default function TreinosPage() {
       if (response.ok) {
         const html = await response.text()
 
-        // Abre o treino em uma nova janela
-        const novaJanela = window.open("", "_blank")
+        // Abre o treino em uma nova janela apenas para visualização
+        const novaJanela = window.open("", "_blank", "noopener,noreferrer")
         if (novaJanela) {
           novaJanela.document.write(html)
           novaJanela.document.close()
           setSuccess(true)
           setCodigo("")
+        } else {
+          setError("Por favor, permita pop-ups para visualizar o treino.")
         }
       } else {
         setError("Treino não encontrado. Verifique o código e tente novamente.")
@@ -129,7 +131,7 @@ export default function TreinosPage() {
               <Alert className="border-green-500/50 bg-green-500/10">
                 <CheckCircle className="h-4 w-4 text-green-400" />
                 <AlertDescription className="text-green-300">
-                  Treino encontrado! O PDF foi aberto em uma nova aba.
+                  Treino encontrado! O PDF foi aberto em uma nova aba para visualização.
                 </AlertDescription>
               </Alert>
             )}

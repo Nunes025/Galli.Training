@@ -25,9 +25,15 @@ function buscarTreino() {
   fetch(caminhoPDF, { method: "HEAD" })
     .then((response) => {
       if (response.ok) {
-        // Abrir PDF em nova aba
-        window.open(caminhoPDF, "_blank")
-        mostrarAlerta("Treino encontrado! O PDF foi aberto em uma nova aba.", "success")
+        // Abrir PDF em nova aba apenas para visualização
+        const novaAba = window.open(caminhoPDF, "_blank", "noopener,noreferrer")
+
+        // Verificar se a aba foi aberta com sucesso
+        if (novaAba) {
+          mostrarAlerta("Treino encontrado! O PDF foi aberto em uma nova aba para visualização.", "success")
+        } else {
+          mostrarAlerta("Por favor, permita pop-ups para visualizar o treino.", "error")
+        }
 
         // Limpar input
         document.getElementById("codigoInput").value = ""
