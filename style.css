@@ -291,85 +291,6 @@ body {
   font-weight: 500;
 }
 
-/* Local Section */
-.local-section {
-  background: linear-gradient(135deg, var(--bg-gray-light) 0%, var(--bg-black) 100%);
-}
-
-.local-grid {
-  display: grid;
-  gap: 48px;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .local-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.local-info {
-  max-width: 600px;
-}
-
-.schedule {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 500px;
-}
-
-.schedule-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
-  border: 1px solid var(--border-gold);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.schedule-item:hover {
-  background: linear-gradient(90deg, rgba(255, 215, 0, 0.15) 0%, transparent 100%);
-  border-color: rgba(255, 215, 0, 0.4);
-}
-
-.schedule-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary-gold);
-  font-weight: 600;
-}
-
-.schedule-time {
-  color: var(--text-white);
-  font-weight: 500;
-}
-
-.local-image {
-  position: relative;
-  text-align: center;
-}
-
-.image-glow {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, transparent 100%);
-  border-radius: 24px;
-  filter: blur(60px);
-}
-
-.local-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
-  position: relative;
-  z-index: 2;
-}
-
 /* Services Section */
 .services-section {
   background: var(--bg-gray);
@@ -618,8 +539,7 @@ body {
     padding: 0 16px;
   }
 
-  .grid,
-  .local-grid {
+  .grid {
     gap: 32px;
   }
 
@@ -635,12 +555,6 @@ body {
 
   .stats {
     justify-content: center;
-  }
-
-  .schedule-item {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
   }
 }
 
